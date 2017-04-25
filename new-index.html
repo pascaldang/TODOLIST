@@ -12,10 +12,81 @@
         
     </head> 
     <body>
-<div data-role="page" id="pageone">
-  <div data-role="panel" id="myPanel"> 
-    <h2>S'inscrire</h2>
-    <form action="register.php" method="post" id="form" data-transition="flow" data-rel="dialog">
+<div data-role="page" id="credits">
+  <div data-role="panel" id="credits"> 
+    <h2>Crédits</h2>
+    <p>Merci à Florian Logé, qui à tout fais.</p>
+
+   <div class="ui-grid-a" id="nogrid_border">
+      <div class="ui-block-a">&nbsp;</div>
+
+   </div>
+	  <a href="#pageone" data-rel="close" class="ui-btn ui-btn-inline">Fermer</a>
+  </div> 
+
+  <div data-role="header">
+    <h1>Application</h1>
+	<a href="#register" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-icon-plus ui-btn-icon-left">S'inscrire</a>
+	<div data-role="navbar">
+    <ul>
+      <li><a href="#anylink" class="ui-btn ui-icon-home ui-btn-icon-left">Accueil</a></li>
+      <li><a href="#pagetwo" class="ui-btn ui-icon-calendar ui-btn-icon-left" >Todo List</a></li>
+      <li><a href="#settings" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-icon-gear ui-btn-icon-left">Settings</a></li>
+	  <li><a href="#login" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-icon-user ui-btn-icon-left">Login</a></li>
+	 
+    </ul>
+  
+</div>
+  </div>
+
+  <div data-role="list" class="ui-content">
+    <p>Bienvenue sur l'accueil, pour utiliser le Todo List vous devez vous enregistrez.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet tellus risus, eget egestas dolor gravida non. Donec vitae massa semper, sodales ligula eu, commodo tortor. Etiam sem quam, aliquet at felis quis, vestibulum dictum nisi. Nunc nec erat dapibus, egestas mi a, efficitur augue. Etiam non egestas tortor. Praesent sodales quis quam at pretium. Aenean vel urna tristique ex sollicitudin blandit. Duis ullamcorper ipsum eu neque posuere, at vestibulum odio sollicitudin. Ut sit amet lobortis massa, vel vestibulum nisi. Aliquam dapibus metus et lectus ornare volutpat. Donec viverra, nibh eu suscipit congue, magna metus pellentesque sapien, sit amet commodo arcu elit vel justo. Nam facilisis turpis nisi, in egestas metus condimentum a.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consequat venenatis dui et tempor. Suspendisse non nulla nec nibh rutrum ultrices rhoncus vel leo. Vivamus id magna a justo rhoncus condimentum id a leo. Sed elementum risus sed felis ullamcorper gravida. Suspendisse vel tristique felis. Nulla rhoncus massa et nibh convallis finibus quis nec tellus. Duis fringilla quam id euismod elementum. Phasellus non urna velit. Integer quis efficitur est, ut pretium risus. Quisque nec congue purus, sit amet lobortis neque.</P>
+  </div>
+     <div data-role="footer">
+    <div data-role="navbar">
+    <ul>
+      <li><a href="#credits" >Crédits</a></li>
+      <li><a href="#contact">Contact US</a></li>
+    </ul>
+  </div>
+   <div data-role="main" class="ui-content">
+ <div data-role="popup" id="login">
+  <div data-role="list" class="ui-content">
+<form action="login.php" method="post" id="form" data-transition="flow" data-rel="dialog">
+   <h3>Se connecter</h3>
+   <div data-role="fieldcontain">
+      <label for="id_name">Votre Pseudo&nbsp;:</label>
+      <input type="text" name="name" id="id_name" value="" required="required" data-mini="true" />
+   </div>
+   <div data-role="fieldcontain">
+      <label for="id_name">Mot de passe&nbsp;:</label>
+      <input type="password" name="password" id="id_name" value="" required="required" data-mini="true" />
+   </div>
+
+   <div class="ui-grid-a" id="nogrid_border">
+      <div class="ui-block-a">&nbsp;</div>
+      <div class="ui-block-b"><button type="submit" data-mini="true" data-inline="true" data-theme="d">Se connecter</button></div>
+   </div>
+  
+      </div>
+ </div>
+   <div data-role="main" class="ui-content">
+ <div data-role="popup" id="settings">
+  <div data-role="list" class="ui-content">
+   <div data-role="list" class="ui-content">
+          <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b ui-icon-facebook ui-btn-icon-left" data-rel="back">Partager Twitter</a>
+        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b ui-icon-twitter ui-btn-icon-left" data-rel="back">Partage Facebook</a>
+      </div>
+      </div>
+ </div>
+ <div data-role="main" class="ui-content">
+ <div data-role="popup" id="register">
+  <div data-role="list" class="ui-content">
+<form action="register.php" method="post" id="form" data-transition="flow" data-rel="dialog">
+   <h3>Inscription</h3>
    <div data-role="fieldcontain">
       <label for="id_name">Votre Pseudo&nbsp;:</label>
       <input type="text" name="name" id="id_name" value="" required="required" data-mini="true" />
@@ -24,9 +95,13 @@
       <label for="id_name">Votre email&nbsp;:</label>
       <input type="text" name="email" id="id_name" value="" required="required" data-mini="true" />
    </div>
+   <div data-role="fieldcontain">
+      <label for="id_name">Mot de passe&nbsp;:</label>
+      <input type="password" name="password" id="id_name" value="" required="required" data-mini="true" />
+   </div>
     <div data-role="fieldcontain">
       <label for="id_note">Votre âge</label>
-      <input type="range" name="note" id="id_note" value="20" min="0" max="100" data-highlight="true" data-mini="true" />
+      <input type="range" name="note" id="id_note" value="20" min="0" max="100" data-highlight="true" data-mini="false" />
     </div>
 	
    <div data-role="fieldcontain">
@@ -54,39 +129,73 @@
       <div class="ui-block-a">&nbsp;</div>
       <div class="ui-block-b"><button type="submit" data-mini="true" data-inline="true" data-theme="d">Envoyer</button></div>
    </div>
-	  <a href="#pageone" data-rel="close" class="ui-btn ui-btn-inline">Fermer</a>
-  </div> 
-
-  <div data-role="header">
-    <h1>Application</h1>
-	<div data-role="navbar">
-    <ul>
-      <li><a href="#anylink">Accueil</a></li>
-      <li><a href="#todolist">Todo List</a></li>
-      <li><a href="#anylink">Crédits</a></li>
-    </ul>
   
-</div>
-  </div>
+      </div>
+ </div>
 
-  <div data-role="main" class="ui-content">
-    <p>Bienvenue sur l'accueil, pour utiliser le Todo List vous devez vous enregistrez.</p>
-    <a href="#myPanel" class="ui-btn ui-btn-inline">S'enregister</a>
-  </div>
+   <div data-role="page" id="pagetwo">
+       <div data-role="main" class="ui-content">
+        <form action="register.php" method="post" id="form" data-transition="flow" data-rel="dialog" style="margin-left: 7px;margin-right: 7px;">
+   <h3 style="text-align: center;">Inscription</h3>
+   <div data-role="fieldcontain">
+      <label for="id_name">Votre Pseudo&nbsp;:</label>
+      <input type="text" name="name" id="id_name" value="" required="required" data-mini="true" />
+   </div>
+   <div data-role="fieldcontain">
+      <label for="id_name">Votre email&nbsp;:</label>
+      <input type="text" name="email" id="id_name" value="" required="required" data-mini="true" />
+   </div>
+    <div data-role="fieldcontain">
+      <label for="id_note">Votre âge</label>
+      <input type="range" name="note" id="id_note" value="20" min="0" max="100" data-highlight="true" data-mini="false" />
+    </div>
+	
+   <div data-role="fieldcontain">
+      <label for="id_deja_viendu">Es tu un héros?</label>
+      <select name="deja_viendu" id="id_deja_viendu" data-role="slider" data-mini="true">
+      <option value="Non">Non</option>
+      <option value="Oui">Oui</option>
+      </select>
+   </div>
 
-  <div data-role="footer">
-    <h1>Footer</h1>
-  </div> 
+	
+   <div data-role="fieldcontain">
+      <label for="id_note_nico" class="select">Ta spécialité :</label>
+      <select name="note_nico" id="id_note_nico" required="required" data-native-menu="false" data-mini="true">
+      <option value="">Choisissez une option</option>
+      <option value="Nul">Développement</option>
+      <option value="Moyen">Réseau</option>
+      <option value="Bien">Faire des diaporamas</option>
+      <option value="Très bien">Sucer des bites</option>
+ 
+      </select>
+   </div>
+
+<button type="submit" data-mini="true" data-inline="true" class=" ui-btn ui-btn-inline ui-shadow ui-corner-all ui-mini" style="text-align: center;">Envoyer</button>
+
+
+      <div data-role="list" class="ui-content">
+          <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b ui-icon-user ui-btn-icon-left" data-rel="back">Se connecter</a>
+        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b ui-icon-back ui-btn-icon-left" data-rel="back">Retour</a>
+      </div>
+	  </div>
+	  
 </div>
 </body>
 </html>
 
+<!---
+		        <fieldset data-role="controlgroup">
+          <legend>Voici votre planning du jour, cocher les cases et faite supprimer</legend>
+            <label for="poubelle">Sortir les poubelles</label>
+            <input type="checkbox" name="favcolor" id="poubelle" value="poubelle">
+            <label for="Lol">Lol</label>
+            <input type="checkbox" name="favcolor" id="lol" value="lol">
+            <label for="test">Test</label>
+            <input type="checkbox" name="favcolor" id="test" value="test">
+			
 
-List 
-<ul data-role="listview" data-autodividers="true">
-  <li><a href="#">Adele</a></li>
-  <li><a href="#">Agnes</a></li>
-  <li><a href="#">Billy</a></li>
-  <li><a href="#">Calvin</a></li>
-  ...
-</ul>
+			  
+        </fieldset>
+		-->
+		
