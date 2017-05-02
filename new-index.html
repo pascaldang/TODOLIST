@@ -8,179 +8,200 @@
 		<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1"> 
 		<meta charset="UTF-8">
+<style>
+.ui-bar-a, .ui-page-theme-a .ui-bar-inherit, html .ui-bar-a .ui-bar-inherit, html .ui-body-a .ui-bar-inherit, html body .ui-group-theme-a .ui-bar-inherit {
+background-color: #2443d0;
+border-color: #2443d0;
+color: white;
+text-shadow: 0 0px 0 #eee;
+font-weight: 700;
+}
+.ui-body-a, .ui-page-theme-a .ui-body-inherit, html .ui-bar-a .ui-body-inherit, html .ui-body-a .ui-body-inherit, html body .ui-group-theme-a .ui-body-inherit, html .ui-panel-page-container-a {
+background-color: #2443d0;
+border-color: #ddd;
+color: black;
+}
+.ui-page-theme-a .ui-btn, html .ui-bar-a .ui-btn, html .ui-body-a .ui-btn, html body .ui-group-theme-a .ui-btn, html head+body .ui-btn.ui-btn-a, .ui-page-theme-a .ui-btn:visited, html .ui-bar-a .ui-btn:visited, html .ui-body-a .ui-btn:visited, html body .ui-group-theme-a .ui-btn:visited, html head+body .ui-btn.ui-btn-a:visited {
+background-color: #93b7d4;
+border-color: #ddd;
+color: #333;
+text-shadow: 0 1px 0 #f3f3f3;
+}
 
+</style>
         
     </head> 
     <body>
-<div data-role="page" id="credits">
-  <div data-role="panel" id="credits"> 
-    <h2>Crédits</h2>
-    <p>Merci à Florian Logé, qui à tout fais.</p>
-
-   <div class="ui-grid-a" id="nogrid_border">
-      <div class="ui-block-a">&nbsp;</div>
-
-   </div>
-	  <a href="#pageone" data-rel="close" class="ui-btn ui-btn-inline">Fermer</a>
-  </div> 
-
-  <div data-role="header">
-    <h1>Application</h1>
-	<a href="#register" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-icon-plus ui-btn-icon-left">S'inscrire</a>
-	<div data-role="navbar">
-    <ul>
-      <li><a href="#anylink" class="ui-btn ui-icon-home ui-btn-icon-left">Accueil</a></li>
-      <li><a href="#pagetwo" class="ui-btn ui-icon-calendar ui-btn-icon-left" >Todo List</a></li>
-      <li><a href="#settings" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-icon-gear ui-btn-icon-left">Settings</a></li>
-	  <li><a href="#login" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-icon-user ui-btn-icon-left">Login</a></li>
-	 
-    </ul>
-  
-</div>
-  </div>
-
-  <div data-role="list" class="ui-content">
-    <p>Bienvenue sur l'accueil, pour utiliser le Todo List vous devez vous enregistrez.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet tellus risus, eget egestas dolor gravida non. Donec vitae massa semper, sodales ligula eu, commodo tortor. Etiam sem quam, aliquet at felis quis, vestibulum dictum nisi. Nunc nec erat dapibus, egestas mi a, efficitur augue. Etiam non egestas tortor. Praesent sodales quis quam at pretium. Aenean vel urna tristique ex sollicitudin blandit. Duis ullamcorper ipsum eu neque posuere, at vestibulum odio sollicitudin. Ut sit amet lobortis massa, vel vestibulum nisi. Aliquam dapibus metus et lectus ornare volutpat. Donec viverra, nibh eu suscipit congue, magna metus pellentesque sapien, sit amet commodo arcu elit vel justo. Nam facilisis turpis nisi, in egestas metus condimentum a.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consequat venenatis dui et tempor. Suspendisse non nulla nec nibh rutrum ultrices rhoncus vel leo. Vivamus id magna a justo rhoncus condimentum id a leo. Sed elementum risus sed felis ullamcorper gravida. Suspendisse vel tristique felis. Nulla rhoncus massa et nibh convallis finibus quis nec tellus. Duis fringilla quam id euismod elementum. Phasellus non urna velit. Integer quis efficitur est, ut pretium risus. Quisque nec congue purus, sit amet lobortis neque.</P>
-  </div>
-     <div data-role="footer">
-    <div data-role="navbar">
-    <ul>
-      <li><a href="#credits" >Crédits</a></li>
-      <li><a href="#contact">Contact US</a></li>
-    </ul>
-  </div>
-   <div data-role="main" class="ui-content">
- <div data-role="popup" id="login">
-  <div data-role="list" class="ui-content">
-<form action="login.php" method="post" id="form" data-transition="flow" data-rel="dialog">
-   <h3>Se connecter</h3>
-   <div data-role="fieldcontain">
-      <label for="id_name">Votre Pseudo&nbsp;:</label>
-      <input type="text" name="name" id="id_name" value="" required="required" data-mini="true" />
-   </div>
-   <div data-role="fieldcontain">
-      <label for="id_name">Mot de passe&nbsp;:</label>
-      <input type="password" name="password" id="id_name" value="" required="required" data-mini="true" />
-   </div>
-
-   <div class="ui-grid-a" id="nogrid_border">
-      <div class="ui-block-a">&nbsp;</div>
-      <div class="ui-block-b"><button type="submit" data-mini="true" data-inline="true" data-theme="d">Se connecter</button></div>
-   </div>
-  
-      </div>
- </div>
-   <div data-role="main" class="ui-content">
- <div data-role="popup" id="settings">
-  <div data-role="list" class="ui-content">
-   <div data-role="list" class="ui-content">
-          <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b ui-icon-facebook ui-btn-icon-left" data-rel="back">Partager Twitter</a>
-        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b ui-icon-twitter ui-btn-icon-left" data-rel="back">Partage Facebook</a>
-      </div>
-      </div>
- </div>
- <div data-role="main" class="ui-content">
- <div data-role="popup" id="register">
-  <div data-role="list" class="ui-content">
-<form action="register.php" method="post" id="form" data-transition="flow" data-rel="dialog">
-   <h3>Inscription</h3>
-   <div data-role="fieldcontain">
-      <label for="id_name">Votre Pseudo&nbsp;:</label>
-      <input type="text" name="name" id="id_name" value="" required="required" data-mini="true" />
-   </div>
-   <div data-role="fieldcontain">
-      <label for="id_name">Votre email&nbsp;:</label>
-      <input type="text" name="email" id="id_name" value="" required="required" data-mini="true" />
-   </div>
-   <div data-role="fieldcontain">
-      <label for="id_name">Mot de passe&nbsp;:</label>
-      <input type="password" name="password" id="id_name" value="" required="required" data-mini="true" />
-   </div>
-    <div data-role="fieldcontain">
-      <label for="id_note">Votre âge</label>
-      <input type="range" name="note" id="id_note" value="20" min="0" max="100" data-highlight="true" data-mini="false" />
-    </div>
+	<!-- Menu -->
 	
-   <div data-role="fieldcontain">
-      <label for="id_deja_viendu">Es tu un héros?</label>
-      <select name="deja_viendu" id="id_deja_viendu" data-role="slider" data-mini="true">
-      <option value="Non">Non</option>
-      <option value="Oui">Oui</option>
-      </select>
-   </div>
+	<div data-role="page" id="menu">
+				  <div data-role="panel" id="menu"> 
+					
+				   
+					  
+					  <a href="#pagetwo" class="ui-btn ui-icon-calendar ui-btn-icon-left" >Todo List</a>
+					 <a href="#settings" class="ui-btn ui-icon-gear ui-btn-icon-left" >Settings</a>
+					 <a href="#register" class="ui-btn ui-icon-user ui-btn-icon-left" >S'inscrire</a>
+					 <a href="#credits" class="ui-btn ui-icon-star ui-btn-icon-left" >Crédits</a>
+					 <a href="#contact" class="ui-btn ui-icon-mail ui-btn-icon-left" >Contact</a>
+					
+				  
+				   <div class="ui-grid-a" id="nogrid_border">
+				   </div>
+				  </div> 
+				  
+				  
+	<!-- Fin Menu -->
 
+	<!-- Page accueil -->
+
+			  <div data-role="header">
+				<h1>Application</h1>
+				<a href="#menu" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-icon-bars ui-btn-icon-left">Menu</a>
+				<a href="#login" class="ui-btn ui-icon-user ui-btn-icon-left" >Login</a>
+			  </div>
+
+			  <div data-role="list" class="ui-content">
+				<p>Bienvenue sur l'accueil, pour utiliser le Todo List vous devez vous enregistrez.</p>
+				<p><img src="img/appmobile.png" style="text-align: center;width: 350px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet tellus risus, eget egestas dolor gravida non. Donec vitae massa semper, sodales ligula eu, commodo tortor. Etiam sem quam, aliquet at felis quis, vestibulum dictum nisi. Nunc nec erat dapibus, egestas mi a, efficitur augue. Etiam non egestas tortor. Praesent sodales quis quam at pretium. Aenean vel urna tristique ex sollicitudin blandit. Duis ullamcorper ipsum eu neque posuere, at vestibulum odio sollicitudin. Ut sit amet lobortis massa, vel vestibulum nisi. Aliquam dapibus metus et lectus ornare volutpat. Donec viverra, nibh eu suscipit congue, magna metus pellentesque sapien, sit amet commodo arcu elit vel justo. Nam facilisis turpis nisi, in egestas metus condimentum a.
+
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consequat venenatis dui et tempor. Suspendisse non nulla nec nibh rutrum ultrices rhoncus vel leo. Vivamus id magna a justo rhoncus condimentum id a leo. Sed elementum risus sed felis ullamcorper gravida. Suspendisse vel tristique felis. Nulla rhoncus massa et nibh convallis finibus quis nec tellus. Duis fringilla quam id euismod elementum. Phasellus non urna velit. Integer quis efficitur est, ut pretium risus. Quisque nec congue purus, sit amet lobortis neque.</P>
+			  </div>
+			  
+				 <div data-role="footer">
+				 <p>By Florian Logé</P>
+			  </div>
+			  
+	</div>
 	
-   <div data-role="fieldcontain">
-      <label for="id_note_nico" class="select">Ta spécialité :</label>
-      <select name="note_nico" id="id_note_nico" required="required" data-native-menu="false" data-mini="true">
-      <option value="">Choisissez une option</option>
-      <option value="Nul">Développement</option>
-      <option value="Moyen">Réseau</option>
-      <option value="Bien">Faire des diaporamas</option>
-      <option value="Très bien">Sucer des grosses bites</option>
+	<!-- Fin page Accueil -->
  
-      </select>
-   </div>
+	<!-- Page Todo list -->
+			  <div data-role="page" data-dialog="true" id="pagetwo">
+			  <div data-role="header">
+				<h1>TODO LIST</h1>
+			  </div>
 
-   <div class="ui-grid-a" id="nogrid_border">
-      <div class="ui-block-a">&nbsp;</div>
-      <div class="ui-block-b"><button type="submit" data-mini="true" data-inline="true" data-theme="d">Envoyer</button></div>
-   </div>
-  
-      </div>
- </div>
+			  <div data-role="main" class="ui-content">
+				<form method="post" action="/action_page_post.php">
+				  <fieldset data-role="controlgroup">
+					<legend>Votre liste de tâche:</legend>
+					  <label for="1">Poubelle</label>
+					  <input type="checkbox" name="favcolor" id="1" value="1">
+					  <label for="2">Ménage</label>
+					  <input type="checkbox" name="favcolor" id="2" value="2">
+					  <label for="3">Devoirs</label>
+					  <input type="checkbox" name="favcolor" id="3" value="3">
+					   <label for="4">Branlette</label>
+					  <input type="checkbox" name="favcolor" id="4" value="4">
+					  <label for="5">Télévision</label>
+					  <input type="checkbox" name="favcolor" id="5" value="5">
+					  <label for="6">Course</label>
+					  <input type="checkbox" name="favcolor" id="6" value="6">
+				  </fieldset>
+				  <input type="submit" data-inline="true" value="Mettre à jour">
+				</form>
+			  </div>
+			  </div>
+	<!-- Fin page Todo list -->
 
-   <div data-role="page" id="pagetwo">
-       <div data-role="main" class="ui-content">
-        <form action="register.php" method="post" id="form" data-transition="flow" data-rel="dialog" style="margin-left: 7px;margin-right: 7px;">
-   <h3 style="text-align: center;">Inscription</h3>
-   <div data-role="fieldcontain">
-      <label for="id_name">Votre Pseudo&nbsp;:</label>
-      <input type="text" name="name" id="id_name" value="" required="required" data-mini="true" />
-   </div>
-   <div data-role="fieldcontain">
-      <label for="id_name">Votre email&nbsp;:</label>
-      <input type="text" name="email" id="id_name" value="" required="required" data-mini="true" />
-   </div>
-    <div data-role="fieldcontain">
-      <label for="id_note">Votre âge</label>
-      <input type="range" name="note" id="id_note" value="20" min="0" max="100" data-highlight="true" data-mini="false" />
-    </div>
+	<!-- Settings -->
+					 
+			<div data-role="page" data-dialog="true" id="settings">
+			  <div data-role="header">
+				<h1>Settings</h1>
+			  </div>
+
+			  <div data-role="main" class="ui-content">
+				<a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b ui-icon-facebook ui-btn-icon-left" data-rel="back">Partager Twitter</a>
+				<a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b ui-icon-twitter ui-btn-icon-left" data-rel="back">Partage Facebook</a>
+			  </div>
+			</div> 
+	<!-- Fin Settings -->
+		<!-- Contact -->
+					 
+			<div data-role="page" data-dialog="true" id="contact">
+			  <div data-role="header">
+				<h1>Nous contacter</h1>
+			  </div>
+
+			  <div data-role="main" class="ui-content">
+			  <form action="login.php" method="post" id="form" data-transition="flow" data-rel="dialog">
+				   
+				   <div data-role="fieldcontain">
+					  <label for="id_name">Votre Pseudo&nbsp;:</label>
+					  <input type="text" name="name" id="id_name" value="" required="required" data-mini="true" />
+				   </div>
+				   <div data-role="fieldcontain">
+					  <label for="id_name">Votre message</label>
+					  <input type="text" name="comments" id="id_name" value="" required="required" data-mini="true" />
+				   </div> 
+				   <button type="submit" data-mini="true" data-inline="true" data-theme="d">Envoyer</button>
+				   </form>
+			
+			  </div>
+			  </div>
+			
+			<!-- Fin contact -->
+			<!-- Login -->
 	
-   <div data-role="fieldcontain">
-      <label for="id_deja_viendu">Es tu un héros?</label>
-      <select name="deja_viendu" id="id_deja_viendu" data-role="slider" data-mini="true">
-      <option value="Non">Non</option>
-      <option value="Oui">Oui</option>
-      </select>
-   </div>
+				<div data-role="page" data-dialog="true" id="login">
+					<div data-role="header">
+					
+						<form action="login.php" method="post" id="form" data-transition="flow" data-rel="dialog" style="margin-left: 7px;margin-right: 7px;">
+						   <h3 style="text-align: center;">Se connecter</h3>
+						   <div data-role="fieldcontain">
+							  <label for="id_name">Votre Pseudo&nbsp;:</label>
+							  <input type="text" name="name" id="id_name" value="" required="required" data-mini="true" />
+						   </div>
+						   <div data-role="fieldcontain">
+							  <label for="id_name">Mot de passe&nbsp;:</label>
+							  <input type="password" name="password" id="id_name" value="" required="required" data-mini="true" />
+						   </div> 
+						   <button type="submit" data-mini="true" data-inline="true" data-theme="d">Se connecter</button>
+						 </form>
+			</div>
+			</div>	 
+	<!-- Fin Login -->
 
-	
-   <div data-role="fieldcontain">
-      <label for="id_note_nico" class="select">Ta spécialité :</label>
-      <select name="note_nico" id="id_note_nico" required="required" data-native-menu="false" data-mini="true">
-      <option value="">Choisissez une option</option>
-      <option value="Nul">Développement</option>
-      <option value="Moyen">Réseau</option>
-      <option value="Bien">Faire des diaporamas</option>
-      <option value="Très bien">Sucer des bites</option>
- 
-      </select>
-   </div>
+	<!-- Register -->				
+					<div data-role="page" data-dialog="true" id="register">
+					<div data-role="header">
+					<form action="register.php" method="post" id="form" data-transition="flow" data-rel="dialog" style="margin-left: 7px;margin-right: 7px;">
+					   <h3 style="text-align: center;">Inscription</h3>
+					   <div data-role="fieldcontain">
+						  <label for="id_name">Votre pseudo&nbsp;:</label>
+						  <input type="text" name="name" id="id_name" value="" required="required" data-mini="true" />
+					   </div>
+					   <div data-role="fieldcontain">
+						  <label for="id_name">Votre email&nbsp;:</label>
+						  <input type="text" name="email" id="id_name" value="" required="required" data-mini="true" />
+					   </div>
+					   <div data-role="fieldcontain">
+						  <label for="id_name">Mot de passe&nbsp;:</label>
+						  <input type="password" name="password" id="id_name" value="" required="required" data-mini="true" />
+					   </div>
+					   <div class="ui-grid-a" id="nogrid_border">
+						  <div class="ui-block-a">&nbsp;</div>
+						  <div class="ui-block-b"><button type="submit" data-mini="true" data-inline="true" data-theme="d">Envoyer</button></div>
+					   </div>
+					  
+				</div>
+				</div>	
+					
+	<!-- fin register -->
+	<!-- crédits -->
+				<div data-role="page" data-dialog="true" id="credits">
+			  <div data-role="header">
+				<h1>Crédits</h1>
+			  </div>
 
-<button type="submit" data-mini="true" data-inline="true" class=" ui-btn ui-btn-inline ui-shadow ui-corner-all ui-mini" style="text-align: center;">Envoyer</button>
+			  <div data-role="main" class="ui-content">
+				<p> Florian Logé, développeur. </p>
+			  </div>
+			 
+		<!-- fin crédits -->
 
-
-      <div data-role="list" class="ui-content">
-          <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b ui-icon-user ui-btn-icon-left" data-rel="back">Se connecter</a>
-        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b ui-icon-back ui-btn-icon-left" data-rel="back">Retour</a>
-      </div>
-	  </div>
-	  
-</div>
 </body>
 </html>
 
