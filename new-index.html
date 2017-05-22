@@ -1,0 +1,242 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <title>Projet</title> 		
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+		
+		<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<meta charset="UTF-8">
+
+		<style>
+		.ui-bar-a, .ui-page-theme-a .ui-bar-inherit, html .ui-bar-a .ui-bar-inherit, html .ui-body-a .ui-bar-inherit, html body .ui-group-theme-a .ui-bar-inherit {
+		background-color: #2443d0;
+		border-color: #2443d0;
+		color: white;
+		text-shadow: 0 0px 0 #eee;
+		font-weight: 700;
+		}
+		.ui-body-a, .ui-page-theme-a .ui-body-inherit, html .ui-bar-a .ui-body-inherit, html .ui-body-a .ui-body-inherit, html body .ui-group-theme-a .ui-body-inherit, html .ui-panel-page-container-a {
+		background-color: #2443d0;
+		border-color: #ddd;
+		color: black;
+		}
+		.ui-page-theme-a .ui-btn, html .ui-bar-a .ui-btn, html .ui-body-a .ui-btn, html body .ui-group-theme-a .ui-btn, html head+body .ui-btn.ui-btn-a, .ui-page-theme-a .ui-btn:visited, html .ui-bar-a .ui-btn:visited, html .ui-body-a .ui-btn:visited, html body .ui-group-theme-a .ui-btn:visited, html head+body .ui-btn.ui-btn-a:visited {
+		background-color: #93b7d4;
+		border-color: #ddd;
+		color: #333;
+		text-shadow: 0 1px 0 #f3f3f3;
+		}
+		
+		
+		</style>
+        
+    </head> 
+    <body>
+	<!-- Menu -->
+	
+	<div data-role="page" id="menu">
+		<div data-role="panel" id="menu"> 
+
+
+
+			<a href="#pagetwo" class="ui-btn ui-icon-calendar ui-btn-icon-left" >Todo List</a>
+			<a href="#settings" class="ui-btn ui-icon-gear ui-btn-icon-left" >Settings</a>
+			<a href="#register" class="ui-btn ui-icon-user ui-btn-icon-left" >S'inscrire</a>
+			<a href="#credits" class="ui-btn ui-icon-star ui-btn-icon-left" >Crédits</a>
+			<a href="#contact" class="ui-btn ui-icon-mail ui-btn-icon-left" >Contact</a>
+
+
+			<div class="ui-grid-a" id="nogrid_border">
+		</div>
+	</div> 
+				  
+				  
+	<!-- Fin Menu -->
+
+	<!-- Page accueil -->
+
+	<div data-role="header">
+		<h1>Application</h1>
+		<a href="#menu" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-icon-bars ui-btn-icon-left">Menu</a>
+		<a href="#login" class="ui-btn ui-icon-user ui-btn-icon-left" >Login</a>
+	</div>
+
+	<div data-role="list" class="ui-content">
+	
+		<p>Bienvenue sur l'accueil, pour utiliser le Todo List vous devez vous enregistrez.</p>
+		
+		<p><img src="img/appmobile.png" style="text-align: center;width: 350px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet tellus risus, eget egestas dolor gravida non. Donec vitae massa semper, sodales ligula eu, commodo tortor. Etiam sem quam, aliquet at felis quis, vestibulum dictum nisi. Nunc nec erat dapibus, egestas mi a, efficitur augue. Etiam non egestas tortor. Praesent sodales quis quam at pretium. Aenean vel urna tristique ex sollicitudin blandit. Duis ullamcorper ipsum eu neque posuere, at vestibulum odio sollicitudin. Ut sit amet lobortis massa, vel vestibulum nisi. Aliquam dapibus metus et lectus ornare volutpat. Donec viverra, nibh eu suscipit congue, magna metus pellentesque sapien, sit amet commodo arcu elit vel justo. Nam facilisis turpis nisi, in egestas metus condimentum a.
+
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consequat venenatis dui et tempor. Suspendisse non nulla nec nibh rutrum ultrices rhoncus vel leo. Vivamus id magna a justo rhoncus condimentum id a leo. Sed elementum risus sed felis ullamcorper gravida. Suspendisse vel tristique felis. Nulla rhoncus massa et nibh convallis finibus quis nec tellus. Duis fringilla quam id euismod elementum. Phasellus non urna velit. Integer quis efficitur est, ut pretium risus. Quisque nec congue purus, sit amet lobortis neque.</P>
+		</div>
+
+		<div data-role="footer">
+			<p>By Florian Logé</P>
+		</div>
+			  
+	</div>
+	
+	<!-- Fin page Accueil -->
+ 
+	<!-- Page Todo list -->
+	<div data-role="page" data-dialog="true" id="pagetwo">
+		<div data-role="header">
+			<h1>TODO LIST</h1>
+		</div>
+
+		<div data-role="main" class="ui-content">
+			<form method="post" action="/action_page_post.php">
+				<fieldset data-role="controlgroup">
+					<div class="ui-grid-a">
+						 <p>Ajouter une tâche</p>					
+						 <div class="ui-block-a">
+								<input type="text" name="name" id="id_name" value="" required="required" data-mini="true" />
+						 </div>
+						 <div class="ui-block-b">
+								<input type="submit" data-inline="true" value="+">
+						 </div>
+					</div>				
+						
+			
+							<label for="1">Poubelle</label>
+							<input type="checkbox" name="favcolor" id="1" value="1">
+							<label for="2">Ménage</label>
+							<input type="checkbox" name="favcolor" id="2" value="2">
+							<label for="3">Devoirs</label>
+							<input type="checkbox" name="favcolor" id="3" value="3">
+							<label for="4">Branlette</label>
+							<input type="checkbox" name="favcolor" id="4" value="4">
+							<label for="5">Télévision</label>
+							<input type="checkbox" name="favcolor" id="5" value="5">
+							<label for="6">Course</label>
+							<input type="checkbox" name="favcolor" id="6" value="6">
+				</fieldset>
+							
+			</form>
+		</div>
+	</div>
+	<!-- Fin page Todo list -->
+
+	<!-- Settings -->
+
+	<div data-role="page" data-dialog="true" id="settings">
+		<div data-role="header">
+			<h1>Settings</h1>
+		</div>
+
+		<div data-role="main" class="ui-content">
+			<a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b ui-icon-facebook ui-btn-icon-left" data-rel="back">Partager Twitter</a>
+			<a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b ui-icon-twitter ui-btn-icon-left" data-rel="back">Partager Facebook</a>
+		</div>
+	</div> 
+	<!-- Fin Settings -->
+	
+	<!-- Contact -->
+					 
+	<div data-role="page" data-dialog="true" id="contact">
+		<div data-role="header">
+			<h1>Nous contacter</h1>
+		</div>
+
+		<div data-role="main" class="ui-content">
+			<form action="login.php" method="post" id="form" data-transition="flow" data-rel="dialog">
+
+				<div data-role="fieldcontain">
+					<label for="id_name">Votre Pseudo&nbsp;:</label>
+					<input type="text" name="name" id="id_name" value="" required="required" data-mini="true" />
+				</div>
+				<div data-role="fieldcontain">
+					<label for="id_name">Votre message</label>
+					<input type="text" name="comments" id="id_name" value="" required="required" data-mini="true" />
+				</div> 
+				<button type="submit" data-mini="true" data-inline="true" data-theme="d">Envoyer</button>
+			</form>
+			
+		</div>
+	</div>
+			
+	<!-- Fin contact -->
+		
+	<!-- Login -->
+	
+	<div data-role="page" data-dialog="true" id="login">
+		<div data-role="header">
+
+			<form action="login.php" method="post" id="form" data-transition="flow" data-rel="dialog" style="margin-left: 7px;margin-right: 7px;">
+				<h3 style="text-align: center;">Se connecter</h3>
+				<div data-role="fieldcontain">
+					<label for="id_name">Votre Pseudo&nbsp;:</label>
+					<input type="text" name="name" id="id_name" value="" required="required" data-mini="true" />
+				</div>
+				<div data-role="fieldcontain">
+					<label for="id_name">Mot de passe&nbsp;:</label>
+					<input type="password" name="password" id="id_name" value="" required="required" data-mini="true" />
+				</div> 
+				<button type="submit" data-mini="true" data-inline="true" data-theme="d">Se connecter</button>
+			</form>
+		</div>
+	</div>	 
+	<!-- Fin Login -->
+
+	<!-- Register -->				
+	<div data-role="page" data-dialog="true" id="register">
+		<div data-role="header">
+			<form action="register.php" method="post" id="form" data-transition="flow" data-rel="dialog" style="margin-left: 7px;margin-right: 7px;">
+				<h3 style="text-align: center;">Inscription</h3>
+				<div data-role="fieldcontain">
+					<label for="id_name">Votre pseudo&nbsp;:</label>
+					<input type="text" name="name" id="id_name" value="" required="required" data-mini="true" />
+				</div>
+				<div data-role="fieldcontain">
+					<label for="id_name">Votre email&nbsp;:</label>
+					<input type="text" name="email" id="id_name" value="" required="required" data-mini="true" />
+				</div>
+				<div data-role="fieldcontain">
+					<label for="id_name">Mot de passe&nbsp;:</label>
+					<input type="password" name="password" id="id_name" value="" required="required" data-mini="true" />
+				</div>
+				<div class="ui-grid-a" id="nogrid_border">
+					<div class="ui-block-a">&nbsp;</div>
+					<div class="ui-block-b"><button type="submit" data-mini="true" data-inline="true" data-theme="d">Envoyer</button></div>
+				</div>
+		</div>
+	</div>	
+					
+	<!-- fin register -->
+
+	<!-- crédits -->
+	<div data-role="page" data-dialog="true" id="credits">
+		<div data-role="header">
+			<h1>Crédits</h1>
+		</div>
+
+		<div data-role="main" class="ui-content">
+			<p> Florian Logé, développeur. </p>
+		</div>
+	</div>
+			 
+	<!-- fin crédits -->
+
+	</body>
+</html>
+
+<!---
+		        <fieldset data-role="controlgroup">
+          <legend>Voici votre planning du jour, cocher les cases et faite supprimer</legend>
+            <label for="poubelle">Sortir les poubelles</label>
+            <input type="checkbox" name="favcolor" id="poubelle" value="poubelle">
+            <label for="Lol">Lol</label>
+            <input type="checkbox" name="favcolor" id="lol" value="lol">
+            <label for="test">Test</label>
+            <input type="checkbox" name="favcolor" id="test" value="test">
+			
+
+			  
+        </fieldset>
+		-->
+		
