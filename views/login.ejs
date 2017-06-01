@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html ng-app="scotchTodo">
+<head>
+    <meta charset="utf-8" />
+    <title>Se connecter</title>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+    <script src="js/controllers/main.js"></script>
+    <script src="js/services/todos.js"></script>
+    <script src="js/core.js"></script>
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+</head>
+<body>
+    <div class="navbar navbar-inverse set-radius-zero" >
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">
+                    <p>Todo List</p>
+                </a>
+            </div>
+            <div class="right-div">
+                <p>Vous êtes connecté en tant que : </p>
+                <a href="login.html" class="btn btn-info pull-right">Connexion</a>
+                <a href="signup.html" class="btn btn-danger pull-right">S'inscrire</a>
+            </div>
+        </div>
+    </div>
+    <section class="menu-section">
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-12">
+                    <div class="navbar-collapse collapse ">
+                        <ul id="menu-top" class="nav navbar-nav navbar-right">
+                            <li><a href="/">Accueil</a></li>
+                           
+                            <li><a href="todo.html">Todo List</a></li>
+                            <li>
+                                <a href="settings.html">Settings</a>
+                            </li>
+                            <li><a href="credits.html">Crédits</a></li>
+
+                            <li><a href="chat.html">Chat</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="content-wrapper">
+        <div class="container">
+            <div class="row pad-botm">
+                <div class="col-md-12">
+                    <h4 class="header-line">Se connecter</h4>
+                </div>
+            </div>  
+             <div class="row">
+                <form action='/signup.html' method='post'>
+                  <div class="form-group">
+                    <label for="id">Pseudo</label>
+                    <input type="text" class="form-control" name="username">
+                  </div>
+                  <div class="form-group">
+                    <label for="pwd">Mot de passe</label>
+                    <input type="password" class="form-control" name="password">
+                  </div>
+                  <button type="submit" class="btn btn-default">Se connecter</button>
+                </form>
+            </div>
+            </div>
+    </div>
+
+</body>
+            <section class="footer-section">
+                <div class="container">
+                    <div class="row">
+                           <p style="text-align: center;">&copy; 2017 todolists</p>
+                    </div>
+                </div>
+            </section>
+
+    <script src="assets/js/jquery-1.10.2.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="assets/js/custom.js"></script>
+  
+
+</html>
+
