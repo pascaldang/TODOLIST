@@ -1,5 +1,7 @@
 var Todo = require('./models/todo');
 var User = require('./models/user');
+var bcrypt = require('bcryptjs');
+var salt = bcrypt.genSaltSync(10);
 
 function getTodos(res) {
     Todo.find(function (err, todos) {
@@ -13,67 +15,98 @@ function getTodos(res) {
     });
 };
 
+var isAuthenticated = function (req, res, next) {
+    if (req.isAuthenticated())
+        return next();
+    res.redirect('/login')
+}
 
 
-module.exports = function (app) {
+module.exports = function (app, passport) {
     
     // Accueil------------------------------------------------------------------
-    app.get('/', function(req, res) {
-        res.render('index');
+    app.get('/', isAuthenticated, function(req, res) {
+        res.render('index', {
+            user : req.user
+        });
     });
 
     //Page Todolist-------------------------------------------------------------
-    app.get('/todo.html', function(req, res) {
-        res.render('todo');
+    app.get('/todo', isAuthenticated, function(req, res) {
+        res.render('todo', {
+            user : req.user
+        });
     });
+
     //Page Settings-------------------------------------------------------------
-    app.get('/settings.html', function(req, res) {
-        res.render('settings');
+    app.get('/settings', isAuthenticated, function(req, res) {
+        res.render('settings', {user : req.user});
     });
+
+    app.post('/update', function(req, res) {
+        bcrypt.genSalt(10, function(err, salt) {
+            bcrypt.hash(req.body.password, salt, function(err, hash) {
+                if (req.body.ancienmdp = req.user.password) {
+                    User.findOneAndUpdate({username: req.user.username}, 
+                        {password: hash}, function(err, user) {})
+                    console.log('Password Updated');
+                    res.redirect('/');
+                }
+            })
+        });
+
+    });
+
     //Page Crédits-------------------------------------------------------------
-    app.get('/credits.html', function(req, res) {
-        res.render('credits');
+    app.get('/credits', function(req, res) {
+        res.render('credits', {
+            user : req.user
+        });
     });
     //Page Chat-------------------------------------------------------------
-    app.get('/chat.html', function(req, res) {
-        res.render('chat');
+    app.get('/chat', isAuthenticated, function(req, res) {
+        res.render('chat', {
+            user : req.user
+        });
     });
     // signup ------------------------------------------------------------------
-    app.get('/signup.html', function(req, res) {
+    app.get('/signup', function(req, res) {
         res.render('signup');
     });
 
-    app.post('/signup.html', function (req, res) {
-        var user = {
-            username: req.body.username,
-            email: req.body.email,
-            password: req.body.password,
-        };
-        
-        User.create(user, function(err, User) {
-            if(err) 
-                 res.send('erreur.html');
+    app.post('/signup', function (req, res) {
+        bcrypt.genSalt(10, function(err, salt) {
+            bcrypt.hash(req.body.password, salt, function(err, hash) {
+                var user = {
+                    username: req.body.username,
+                    email: req.body.email,
+                    password: hash
+                };
+
+                User.create(user, function(err, User) {
+                    if(err) 
+                        res.send('erreur.html');
+                });
+                res.redirect('/');
+            })
         });
-        res.redirect('/');
     });
 
     //login----------------------------------------------------------------------
-    app.get('/login.html', function(req, res) {
-        res.render('login');
+    app.get('/login', function(req, res) {
+        res.render('login', {message: req.flash('message')});
     });
 
-    app.post('/login.html', function (req, res) {
-        var user = {
-            username: req.body.username,
-            password: req.body.password,
-        };
-        
-        User.create(user, function(err, User) {
-            if(err) 
-                 res.send(err);
-            //return res.send('Logged In!');
-        });
-        res.redirect('/');
+    app.post('/login', passport.authenticate('login', {
+        successRedirect: '/',
+        failureRedirect: '/login',
+        failureFlash : true
+    }));
+
+    //logout--------------------------------------------------------------------
+    app.get('/logout', function(req, res) {
+      req.logout();
+      res.redirect('/');
     });
 
     

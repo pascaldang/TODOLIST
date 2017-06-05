@@ -26,9 +26,12 @@
                 </a>
             </div>
             <div class="right-div">
-                <p>Vous êtes connecté en tant que : </p>
-                <a href="login.html" class="btn btn-info pull-right">Connexion</a>
-                <a href="signup.html" class="btn btn-danger pull-right">S'inscrire</a>
+                <% if (user) { %>
+                <a href="/logout" class="btn btn-danger pull-right">Logout</a></li>
+                <% } else { %> 
+                <a href="login" class="btn btn-info pull-right">Connexion</a>
+                <a href="signup" class="btn btn-danger pull-right">S'inscrire</a>
+                <% } %>
             </div>
         </div>
     </div>
@@ -40,13 +43,13 @@
                         <ul id="menu-top" class="nav navbar-nav navbar-right">
                             <li><a href="/">Accueil</a></li>
                            
-                            <li><a href="todo.html">Todo List</a></li>
+                            <li><a href="todo">Todo List</a></li>
                             <li>
-                                <a href="settings.html">Settings</a>
+                                <a href="settings">Settings</a>
                             </li>
-                            <li><a href="credits.html" class="menu-top-active">Crédits</a></li>
+                            <li><a href="credits" class="menu-top-active">Crédits</a></li>
 
-                            <li><a href="chat.html">Chat</a></li>
+                            <li><a href="chat">Chat</a></li>
                         </ul>
                     </div>
                 </div>
