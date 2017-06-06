@@ -30,17 +30,14 @@ module.exports = function(passport) {
           return done(null, false, 
             req.flash('message', 'Utilisateur inconnu!'));                 
         }
-        if (bcrypt.compare(password, user.password, function(err, res) {
-              res = true;
-            })
-        ) {
-          console.log('Wrong password');
-          return done(null, false, 
-            req.flash('message', 'Mauvais mot de passe!')); 
-        }
-        // User and password both match, return user from 
-        // done method which will be treated like success
-        return done(null, user);
+        bcrypt.compare(password, user.password, function(err, res) {
+        	if (res == false)
+        	{
+        		console.log('Wrong Password');
+        		return done(null, false, req.flash('message', 'Mauvais mot de passe'));
+        	}
+        	return done(null, user);
+        });
       }
     );
   }));

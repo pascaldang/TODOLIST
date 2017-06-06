@@ -54,7 +54,6 @@ module.exports = function (app, passport) {
                 }
             })
         });
-
     });
 
     //Page Crédits-------------------------------------------------------------
@@ -147,9 +146,4 @@ module.exports = function (app, passport) {
             getTodos(res);
         });
     });
-
-    // application -------------------------------------------------------------
-    /*app.get('*', function (req, res) {
-        res.sendFile(__dirname + '/public/todo.html'); // load the single view file (angular will handle the page changes on the front-end)
-    });*/
 };
