@@ -2,6 +2,8 @@ var Todo = require('./models/todo');
 var User = require('./models/user');
 var bcrypt = require('bcryptjs');
 var salt = bcrypt.genSaltSync(10);
+var LocalStrategy   = require('passport-local').Strategy;
+
 
 function getTodos(res) {
     Todo.find(function (err, todos) {
@@ -26,16 +28,12 @@ module.exports = function (app, passport) {
     
     // Accueil------------------------------------------------------------------
     app.get('/', isAuthenticated, function(req, res) {
-        res.render('index', {
-            user : req.user
-        });
+        res.render('index', {user : req.user});
     });
 
     //Page Todolist-------------------------------------------------------------
     app.get('/todo', isAuthenticated, function(req, res) {
-        res.render('todo', {
-            user : req.user
-        });
+        res.render('todo', {user : req.user});
     });
 
     //Page Settings-------------------------------------------------------------
@@ -52,7 +50,7 @@ module.exports = function (app, passport) {
                     console.log('Password Updated');
                     res.redirect('/');
                 }
-            })
+            });
         });
     });
 
